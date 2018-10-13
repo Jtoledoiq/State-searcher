@@ -496,14 +496,17 @@ border:1px solid black
   document.getElementById("search-input").onkeyup = function(){
 
     search = document.getElementById("search-input").value;
-    console.log(search);
+    //console.log(search);
+
     const regex = new RegExp(search,'gi')
-    var filtrate = cities.filter(place=>{return place.city.match(regex)});
+
+    var filtrate = cities.filter(place=>{return place.city.match(regex) ||place.state.match(regex)});
     console.log( filtrate);
-    var div=document.getElementById('output')
+
+    var append=document.getElementById('output')
     for(var i=0; i<filtrate.length; i++) {
       //document.getElementsByClassName('message')[i].textContent="city: " + filtrate[i].city+ ". State:" +filtrate[i].state;
-      div.innerHTML +="city: " + filtrate[i].city + "state: "+ filtrate[i].state +"</br>"
+      append.innerHTML +="city: " + filtrate[i].city + "state: "+ filtrate[i].state +"</br>"
       }
   }
 
