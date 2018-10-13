@@ -88,13 +88,20 @@ border:1px solid black
 
   var search
   document.getElementById("search-input").onkeyup = function(){
-
+    for(var i=0; i<filtrate.length; i++) {
+      document.getElementsByClassName('message')[0].textContent="city: " + filtrate[i].city+ ". State:" +filtrate[i].state;
+      }
     search = document.getElementById("search-input").value;
     console.log(search);
+    for(var i=0; i<filtrate.length; i++) {
+      document.getElementsByClassName('message')[0].textContent="city: " + filtrate[i].city+ ". State:" +filtrate[i].state;
+      }
   }
 
   var filtrate = cities.filter(place=>{return place.city.match(/new/i)});
   console.log( filtrate);
+
+
 
   </script>
 </body>
