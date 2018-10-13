@@ -27,10 +27,30 @@ margin:40px;
 
 .form{
 color:blue;
-width:300px;
+width:45%;
 height:25px;
 background-color:aliceblue;
-border:1px solid black
+border:2px solid black
+}
+
+li {
+   list-style-type: none;
+   margin-top: 0px;
+   width:45%;
+   margin: auto;
+   border-bottom: 2px  solid black;
+   border-left: 2px  solid black;
+   border-right: 2px  solid black;
+}
+
+li:first-child {
+  border-top: 2px  solid black;
+}
+
+#state  {
+  align-items: left;
+  align-content: left;
+  margin:5px;
 }
   </style>
 
@@ -76,8 +96,8 @@ border:1px solid black
     var html= filtrate.map(place =>{
       return `
         <li>
-          <span>${place.city}, ${place.state}</span>
-          <span>${place.population}</span>
+          <span id="state">${place.city}, ${place.state}</span>
+          <span id="population">${place.population}</span>
         </li>
 
       `;
