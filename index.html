@@ -101,7 +101,22 @@ li {
     const regex = new RegExp(search,'gi')
 
     var filtrate = cities.filter(place=>{return place.city.match(regex) ||place.state.match(regex)});
-    console.log( filtrate);
+    console.log( filtrate[1].city);
+
+    var filtrateCitiesLink=[];
+
+    function obtainObjects(){
+      for (var i=0; i<filtrate.length; i++) {
+        filtrateCitiesLink.push(filtrate[i].city);
+      }
+    };
+    function createDashes(){
+      for (var i=0; i<filtrateCitiesLink.length; i++) {
+        filtrateCitiesLink[i].replace(" ", "_");;
+      }
+    }
+    obtainObjects();
+    console.log(filtrateCitiesLink);
 
     var append=document.getElementById('output');
 
